@@ -1,0 +1,28 @@
+2025-05-29 19:03:52,982 - DEBUG - matplotlib data path: C:\Users\LMO3\Documents\GitHub\React-Shotbot\.venv\Lib\site-packages\matplotlib\mpl-data
+2025-05-29 19:03:53,012 - DEBUG - CONFIGDIR=C:\Users\LMO3\.matplotlib
+2025-05-29 19:03:53,015 - DEBUG - interactive is False
+2025-05-29 19:03:53,015 - DEBUG - platform is win32
+2025-05-29 19:03:53,439 - DEBUG - CACHEDIR=C:\Users\LMO3\.matplotlib
+2025-05-29 19:03:53,447 - DEBUG - Using fontManager instance from C:\Users\LMO3\.matplotlib\fontlist-v390.json
+2025-05-29 19:03:56,128 - INFO - [31m[1mWARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.[0m
+ * Running on all addresses (0.0.0.0)
+ * Running on http://127.0.0.1:5000
+ * Running on http://192.168.1.30:5000
+2025-05-29 19:03:56,135 - INFO - [33mPress CTRL+C to quit[0m
+2025-05-29 19:03:56,155 - INFO -  * Restarting with stat
+2025-05-29 19:03:58,888 - DEBUG - matplotlib data path: C:\Users\LMO3\Documents\GitHub\React-Shotbot\.venv\Lib\site-packages\matplotlib\mpl-data
+2025-05-29 19:03:58,900 - DEBUG - CONFIGDIR=C:\Users\LMO3\.matplotlib
+2025-05-29 19:03:58,902 - DEBUG - interactive is False
+2025-05-29 19:03:58,903 - DEBUG - platform is win32
+2025-05-29 19:03:59,014 - DEBUG - CACHEDIR=C:\Users\LMO3\.matplotlib
+2025-05-29 19:03:59,020 - DEBUG - Using fontManager instance from C:\Users\LMO3\.matplotlib\fontlist-v390.json
+2025-05-29 19:03:59,443 - WARNING -  * Debugger is active!
+2025-05-29 19:03:59,454 - INFO -  * Debugger PIN: 752-199-073
+2025-05-29 19:05:56,199 - INFO - 127.0.0.1 - - [29/May/2025 19:05:56] "[35m[1mGET /api/shotcard?team_id=2 HTTP/1.1[0m" 500 -
+2025-05-29 19:07:58,394 - INFO - 127.0.0.1 - - [29/May/2025 19:07:58] "[35m[1mGET /api/shotcard?team_id=4 HTTP/1.1[0m" 500 -
+2025-05-29 19:15:14,323 - INFO - 127.0.0.1 - - [29/May/2025 19:15:14] "OPTIONS /api/season HTTP/1.1" 200 -
+2025-05-29 19:15:14,382 - INFO - 127.0.0.1 - - [29/May/2025 19:15:14] "[35m[1mPOST /api/season HTTP/1.1[0m" 500 -
+2025-05-29 19:16:27,301 - INFO - 127.0.0.1 - - [29/May/2025 19:16:27] "OPTIONS /api/season HTTP/1.1" 200 -
+2025-05-29 19:16:27,344 - INFO - 127.0.0.1 - - [29/May/2025 19:16:27] "[35m[1mPOST /api/season HTTP/1.1[0m" 500 -
+2025-05-29 19:16:33,810 - INFO - 127.0.0.1 - - [29/May/2025 19:16:33] "[35m[1mGET /api/shotcard?team_id=1 HTTP/1.1[0m" 500 -
+2025-05-29 19:16:33,821 - INFO - 127.0.0.1 - - [29/May/2025 19:16:33] "[35m[1mGET /api/shotcard?team_id=7 HTTP/1.1[0m" 500 -

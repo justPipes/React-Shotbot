@@ -1,0 +1,74 @@
+.App {
+  text-align: center;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr 4fr 1fr;
+  height: 100vh; /* Full viewport height */
+}
+
+
+
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+
+/* Style for the left and right sections */
+.outer {
+  background-color: grey;
+  background-image: url('../pages/assets/nhl.png'); /* Replace with the correct path to your PNG */
+  background-repeat: repeat; /* Repeat the image vertically */
+  background-size: contain; /* Ensure the image fits within the container */
+  background-size: 25%; /* Make the image 75% smaller */
+  background-position: center; /* Center the image within the container */
+  filter: blur(1px); /* Apply a blur effect */
+}
+
+/* Style for the middle section */
+.middle {
+  background-color: white;
+  grid-column: 2; /* Ensure the middle content spans the middle column */
+  padding: 2rem;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columns */
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.grid-container img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+}
+
+.toggle-btn {
+  padding: 10px 20px;
+  font-size: 16px;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.toggle-btn.toggled {
+  background-color: #cccccc;
+  color: #666;
+  cursor: not-allowed;
+}
