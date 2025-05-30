@@ -15,7 +15,6 @@ function SeasonToggleButtons() {
   const teamIds = Object.keys(teams);
   const eventLabels = ['Hits', 'Giveaways', 'Takeaways', 'Goals', 'Shots', 'Misses', 'Blocked shot'];
 
-  // Initialize toggles state with false (off) for each team
   const [teamToggles, setTeamToggles] = useState(
     Object.fromEntries(teamIds.map(id => [id, false]))
   );
@@ -23,11 +22,10 @@ function SeasonToggleButtons() {
     new Array(eventLabels.length).fill(false));
   
 
-  // Handle toggle action for each team
   const handleTeamToggle = (teamId) => {
     setTeamToggles((prev) => ({
       ...prev,
-      [teamId]: !prev[teamId], // Toggle the state of the clicked team
+      [teamId]: !prev[teamId], 
     }));
   };
   const handleEventToggle=(index)=>{
@@ -37,9 +35,8 @@ function SeasonToggleButtons() {
       return updated;
     });
   };
-  // Send activated toggles (selected teams) to backend
   const sendTogglesToBackend = async () => {
-    // Get an array of active (selected) team IDs
+   
     const activeTeams = Object.keys(teamToggles).filter(id =>teamToggles[id]);
     const activeEvents = eventLabels.filter((_,index)=>eventToggles[index]);
 
@@ -52,12 +49,12 @@ function SeasonToggleButtons() {
           method: 'Post',
           headers: {
             'Accept': 'application/json',
-            'Content-Type': 'application/json'  // 🔥 This is what Flask needs
+            'Content-Type': 'application/json' 
           },
           
           body: JSON.stringify({ teamIds: activeTeams,
                                  events: activeEvents
-          }),  // Add the selected teams as a body or params
+          }),  
         });
 
         if (response.ok) {

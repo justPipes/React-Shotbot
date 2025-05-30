@@ -40,65 +40,6 @@ function EventButtons() {
     </div>
   );
 }
-/*
-
-
-function GoalieButtons() {
-    return (
-      <ButtonGroup aria-label="Basic example">
-        <Button variant="secondary">Shots faced</Button>
-        <Button variant="secondary">Goals against</Button>
-        <Button variant="secondary">Catches</Button>
-        <Button variant="secondary">Rebounds from Shots</Button>
-        <Button variant="secondary">Misses</Button>
-      </ButtonGroup>
-    );
-  }
-
-function NameDropdown() {
-  const [players] = useState([]);
-  const [search, setSearch] = useState('');
-
- // useEffect(() => {
-    // Fetch data from the API
-   // fetch('http://localhost:5000/api/teams')
-    //  .then(res => res.json())
-   //   .then(data => setPlayers(data))
-  //    .catch(error => console.error('Error fetching data:', error));
-  //}, []);
-
-  const filteredPlayers = players.filter(player =>
-    player.name.toLowerCase().includes(search.toLowerCase())
-  );
-
-  const handleClick = (playerName) => {
-    console.log('Selected Player:', playerName);
-    // You can set state or trigger other logic here
-  };
-
-  return (
-    <div>
-      <input
-        type="text"
-        placeholder="Search Player..."
-        value={search}
-        onChange={e => setSearch(e.target.value)}
-      />
-      <ul>
-        {filteredPlayers.map(player => (
-          <li key={player.name}>
-            <button onClick={() => handleClick(player.name)}>
-              {player.name}
-            </button>
-          </li>
-        ))}
-      </ul>
-    </div>
-  );
-}
-
-
-*/
 
 
 export {EventButtons,TeamToggleBttns};

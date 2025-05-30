@@ -1,13 +1,13 @@
 
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css'; 
 import { MainDropdown } from './components/Dropdowns';
 import Home from "./pages/Home";
 import Season from "./pages/season";
 import Faq from "./pages/faq";
 import { Skaters, Goalies } from "./pages/players";
 import { Shotcards } from "./pages/shotcard";
-import './styles/App.css'; // Correct import statement
+import './styles/App.css'; 
 
 function App() {
   //
