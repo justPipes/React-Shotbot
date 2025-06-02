@@ -13,7 +13,7 @@ NHL_TEAMS = {
 
 #EVENT_DICT={'Hits':'hits', 'Giveaways':'giveaway', 'Takeaways':'takeaway', 'Goals':'goals', 'Shots':'shots', 'Misses':'miss', 'Blocked shot':'blocks'}
 #EVENT_COLS={'Hits':'xPos,yPos,hittingPlayerId,hitteePlayerId,eventOwnerTeamId', 'Giveaways':'xPos,yPos,playerId,eventOwnerTeamId', 'Takeaways':'xPos,yPos,playerId,eventOwnerTeamId', 'Goals':'xPos,yPos,playerID,shotType,state,goalie,eventOwnerTeamId', 'Shots':'xPos,yPos,playerID,shotType,goalie,eventOwnerTeamId', 'Misses':'xPos,yPos,playerId,ShotType,goalie,reason,eventOwnerTeamId', 'Blocked shot':'xPos,yPos,playerID,reason,goalie,blockingPlayerId,eventOwnerTeamId'}
-#BASE_URL = "https://api-web.nhle.com/v1/"
+BASE_URL = "https://api-web.nhle.com/v1/"
 
 def configure_logging():
     logging.basicConfig(level=logging.DEBUG,
