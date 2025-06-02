@@ -327,10 +327,8 @@ class query:
 
         conn=sqlite3.connect('./main.db')
         cursor=conn.cursor()
-        #homeTeamId=cursor.execute('''SELECT homeTeam from games where gameId=?''',(game_id,)).fetchone()[0]
         homeTeam=get.team.name(homeTeamId,game_id)
         homeTeamAbbrev=get.team.abbrev(homeTeamId,game_id)
-        #awayTeamId=cursor.execute('''SELECT awayTeam from games where gameId=?''',(game_id,)).fetchone()
         awayTeam=get.team.name(awayTeamId,game_id)
         awayTeamAbbrev=get.team.abbrev(awayTeamId,game_id)
         venue=cursor.execute('''SELECT venue from games where gameId=?''',(game_id,)).fetchone()[0]

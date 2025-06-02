@@ -2,14 +2,23 @@ from flask import Flask, send_file, request, jsonify, send_from_directory
 from flask_cors import CORS,cross_origin
 import table as table
 import os
+import threading
 import sys 
 import util
 from flask import url_for
 import logging
 import map
+import time
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:3000"])
+CORS(app, resources={
+    r"/api/*": {
+        "origins": "*",
+        "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],  # Alle benötigten Methoden
+        "allow_headers": ["Content-Type", "Authorization"],      # Alle benötigten Headers
+        "supports_credentials": True                             # Falls Cookies/JWT
+    }
+})
 
 BASE_DIR = os.path.dirname(__file__)
 CARDS_DIR = os.path.join(BASE_DIR, 'src', 'assets', 'card')
@@ -40,6 +49,9 @@ def get_shotcard():
 
 @app.route('/api/shotcard/<filename>')
 def serve_shotcard_image(filename):
+    '''
+    Serving the shotcard for the choosen team
+    '''
     file_path = os.path.join(SHOTCARD_DIR, filename)
     file_path=os.path.normcase(file_path)
     print(file_path)
@@ -47,15 +59,27 @@ def serve_shotcard_image(filename):
         return jsonify({"status": "error", "message": "Filed not found"}), 404
     return send_from_directory(SHOTCARD_DIR, filename, mimetype='image/jpeg')  # or appropriate type
 
-@app.route('/api/season', methods=['POST'])
-@cross_origin()  
+@app.route('/api/season', methods=['GET','POST'])
+@cross_origin(origins=["http://localhost:3000"])
 def get_data():
-    data = request.get_json()  
-    team_ids=list([int(x) for x in data.get('teamIds')])
-    map.make.card(team_ids,data.get('events'))
-   
-    return jsonify({'message': 'Done'})
+    '''
+    Reading out the data from the seaosn page
+    Creating the img and returning it
+    '''
+    data=request.get_json()
+    img=map.make.card(data['teamIds'],data['events'])
+    return send_file(img, mimetype='image/png')
 
+@app.route('/api/season/result')
+def serve_card():
+    return send_from_directory('../public/static/cards/','result.png')
+
+@app.errorhandler(Exception)
+def handle_exception(e):
+    '''
+    General error handler
+    '''
+    return jsonify({"error": str(e)})
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0',debug=True, port=5000,threaded=True)

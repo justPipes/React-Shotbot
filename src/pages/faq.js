@@ -9,7 +9,10 @@ function Faq (){
         <p>I'll get to it.</p>
         <h3>So you are into hockey?</h3>
         <p>Not that much, but I like the NHL API and what I can do with it.</p>
-    </div>
+        <h3>So if I want to reach you, how can I do it?</h3>
+        <p>datathings@proton.me</p>
+        <h3>Buy you a coffee or anything?</h3>
+        </div>
     );
 }
 

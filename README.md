@@ -57,7 +57,7 @@ Planned features are:
 
 ### Season event reports
 
-Choose one or multiple Teams, choose an event and the rink image will display the placement of the events.
+I'll try to implement hovering overpoints to show additional Data.
 
 ### Player reports
 

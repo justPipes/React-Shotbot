@@ -1,5 +1,7 @@
 class get:
-    # Work in progress for a report card for a single player
+    '''
+    Work in progress, nothing yet
+    '''
     def playerData(player_id):
         return{'name','height','weight','birthCity','birthState','birthCountry','team','position','shootCatch','headshot','birthdate'}
     def gamesPlayed(player_id):

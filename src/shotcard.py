@@ -500,7 +500,6 @@ class plot:
         max_total=max(max_a,max_b)
 
         unique_labels = {}
-        #for elem in prepare.targets_by_period(data['homeTeam'],data['homeTeamId']) + prepare.targets_by_period(data['awayTeam'],data['awayTeamId']):
         for elem in prepare.targets_by_period(data['homeTeamId'],data['awayTeamId'],data['gameId']) :
             if elem[2] not in unique_labels: unique_labels[elem[2]] = event_colors.get(elem[2])
 
@@ -535,10 +534,7 @@ class plot:
         logging.info(f"saved final plot for game {data['gameId']}")
     
     def init():
-        #for game_id in table.query.gameIds():
-        #    g=game_id[0]
-        #    data=get.game.game_data(g)
-        
+       
         for (homeTeam,awayTeam,gameId) in table.query.shotCardParamsReg():
                 data=prepare.all(homeTeam,awayTeam,gameId)
                 plot.final(data)

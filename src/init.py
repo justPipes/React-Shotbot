@@ -7,6 +7,9 @@ import shotcard
 
 class db:
     def make_all():
+        '''
+        Initializing the tables
+        '''
         table.make.games()
         table.make.teams()
         table.make.players()
@@ -20,6 +23,12 @@ class db:
         table.make.shotcards()
 
     def fill_all(data):
+        '''
+        data(dict):     Dict with the data, which we use to fill the tables
+        returns:
+            None
+            Fills the tables
+        '''
         table.fill.games(data['base'])
         table.fill.blocks(data['blocked-shot'])
         table.fill.goals(data['goal'])
@@ -31,6 +40,10 @@ class db:
         table.fill.players(data['players'])
     
     def init():
+        '''
+        Initialize the database
+        Fill the database
+        '''
         all=set(get.game.all_ids())
         result=[]
         db.make_all()
@@ -43,13 +56,20 @@ class db:
         return None 
     
     def update():
-        # ToDo
-        # Updating existing entries such as: 
-        # If no goalie is in goal during a goal score, the goal state entry should be changed to eng for empty net goal
+        '''
+        Not implemented yet
+        '''
         return None
 class img:
 
     def logos():
+        '''
+        args:
+            /
+        returns:
+            all the team Logos of the NHL
+
+        '''
         for val in const.NHL_TEAMS.values():
             try:
                 url=f'https://assets.nhle.com/logos/nhl/svg/{val}_light.svg'
@@ -62,6 +82,12 @@ class img:
                 logging.error(f'Logo for {val} not found, {e}')   
      
     def headshots():
+        '''
+        args:
+            /
+        returns:
+            saves all the headhsots form nhl players in the /headshots folder
+        '''
         for url in table.query.headshots():
             try:
                 response = requests.get(url)
@@ -76,6 +102,10 @@ class img:
 class main:
 
     def all():
+        '''
+        Main initlize function
+        init database, logos,headshots and shotcards
+        '''
         db.init()
         img.logos()
         img.headshots()

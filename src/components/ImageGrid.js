@@ -1,4 +1,4 @@
-// ImageGrid.js
+
 import React from 'react';
 import './ImageGrid.css';
 
@@ -8,7 +8,7 @@ const ImageGrid = ({ images }) => {
       {images.map((imgPath, index) => (
         <img
           key={index}
-          src={`http://localhost:5000${imgPath}`} // Adjust for your backend
+          src={`http://localhost:5000${imgPath}`} 
           alt={`img-${index}`}
         />
       ))}

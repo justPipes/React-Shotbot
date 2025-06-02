@@ -9,34 +9,15 @@ import const
 import numpy as np
 import const
 import matplotlib.patches as mpatches
+import io
 
 
 class make:
-    def card(team_ids,events):
-        # to fix:
-        # y -> -y
-        data=prep.data(team_ids,events)
-        d=data
-        plot.card(d)
-        return None
-    
-    def test():
-        conn=sqlite3.connect('./main.db')
-        cursor=conn.cursor()
-        q=cursor.execute('''SELECT xPos,yPos from goals where eventOwnerTeamId=8;''').fetchall()
-        x=[i[0] for i in q]
-        y=[i[1] for i in q]
-        conn.commit()
-        conn.close()
-        plt.figure(figsize=(8,10))
-        img=plt.imread("./assets/cards/rinkdno.png")
-        extent=[-43,43, -100, 100]
-        plt.imshow(img, extent=extent,aspect='auto', zorder=1)
-        plt.scatter(y,x)
-        plt.savefig('result.png')
-        plt.close()
-        
 
+    def card(team_ids,events):
+        data=prep.data(team_ids,events)
+        return plot.card(data)
+    
 class prep:
 
     def data(team_ids,events):
@@ -94,27 +75,9 @@ class plot:
         legend_handles = [mpatches.Patch(color=team_to_color[team_id], label=const.NHL_TEAMS.get(team_id, 'Unknown')) for team_id in labels]
         plt.axis('off')
         plt.legend(handles=legend_handles, loc= 'center',ncols=8,bbox_to_anchor=(0.5,-0.1))
-        plt.savefig('./assets/cards/t.png',dpi=300)
+        img_bytes = io.BytesIO()
+        plt.savefig(img_bytes, format='png')
         plt.close()
-
-    def cardKDE(data):
-        fig = plt.figure(figsize=(8,10))
-        img= plt.imread("./assets/rink.png")
-        extent=[-43,43, -100, 100]
-        fig.imshow(img, extent=extent,aspect='auto', zorder=1)
-        extent=[-43,43, 0, 100]
-        levels=9
-        thresh=0.25
-        fill=False
-        sns.kdeplot(data=data['data_home'],
-            warn_singular=False,
-            x="yPos",
-            y="xPos",
-            levels=levels,
-            thresh=thresh,
-            fill=fill,
-            ax=kde_home,
-            color='red',
-            extent=extent)
-        plt.savefig(f"./assets/shotcard/{data['gameId']}.png",dpi=300)
-        plt.close()
+        img_bytes.seek(0)
+        return img_bytes
+        

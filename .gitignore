@@ -26,3 +26,5 @@ yarn-error.log*
 /src/assets/shotcard
 /src/assets/teams
 *.db
+public/static/cards/result.png
+src/assets/cards/t.png

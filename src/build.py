@@ -12,6 +12,9 @@ import seaborn as sns
 import sqlite3
 
 def main():
+    '''
+    This function will initliaze the database, shotcards, logos and player headshots
+    '''
     init.main.all()
     
 

@@ -82,13 +82,3 @@ class fix:
         ax.set_xlabel("")
         ax.set_ylabel("")
         logging.info('Configured plot')
-
-    
-#    def wsl_to_windows(wsl_path):
-#        """Convert WSL path to Windows path"""
-#        if not wsl_path.startswith('/mnt/'):
-#            # This is a Linux native path, not directly accessible from Windows
-#            return None
-#        drive_letter = wsl_path[5].upper()
-#        remaining_path = wsl_path[6:]
-#        return f"{drive_letter}:{remaining_path.replace('/', '\\')}"
