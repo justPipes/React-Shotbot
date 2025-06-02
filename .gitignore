@@ -29,3 +29,4 @@ yarn-error.log*
 *.db
 public/static/cards/result.png
 src/assets/cards/t.png
+src/log.txt
