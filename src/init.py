@@ -52,7 +52,7 @@ class db:
             db.fill_all(result)
             logging.info(f'Game {game_id} done')
         table.update.players()
-        table.update.teams()
+        #table.update.teams()
         return None 
     
     def update():
