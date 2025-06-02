@@ -16,9 +16,13 @@ NHL_TEAMS = {
 BASE_URL = "https://api-web.nhle.com/v1/"
 
 def configure_logging():
-    logging.basicConfig(level=logging.DEBUG,
-                        format='%(asctime)s - %(levelname)s - %(message)s',
-                        filename='log.txt',
-                        filemode='a') 
+    logging.basicConfig(
+        level=logging.DEBUG,
+        format='%(asctime)s - %(levelname)s - %(message)s',
+        handlers=[
+            logging.FileHandler('log.txt', mode='a'),  # File handler
+            logging.StreamHandler()                   # Terminal/console handler
+        ]
+    )
 
 configure_logging()
