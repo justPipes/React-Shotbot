@@ -5,7 +5,12 @@ The code is using a react frontend with a flask based backend.
 
 Please,keep in mind that this project is not done but I'd it to be somewhere for my cv.
 
-This porject will be updated soon.
+This project will be updated soon.
+
+If you want a peek at the webapp, take a look at https://react-shotbot.onrender.com.
+
+If you want to do a small test, take a look at the deployment-test branch with a filled database.
+
 
 ## How do set it up?
 
@@ -32,9 +37,6 @@ python init.py
 ````
 
 For the initial building of the database. This will take up some time. In future builds, the app will be deployed online and thus require no building.
-
-If you want a peek at the webapp, take a look at https://react-shotbot.onrender.com.
-If you want to do a small test, take a look at the deployment-test branch with a filled database.
 
 ## How can I use it?
 
