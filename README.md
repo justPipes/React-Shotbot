@@ -20,6 +20,7 @@ pip install -r requirements.txt
 For the react part
 
 ```bash
+npm install concurrently
 npm install
 ```
 
@@ -31,6 +32,9 @@ python init.py
 ````
 
 For the initial building of the database. This will take up some time. In future builds, the app will be deployed online and thus require no building.
+
+If you want a peek at the webapp, take a look at https://react-shotbot.onrender.com.
+If you want to do a small test, take a look at the deployment-test branch with a filled database.
 
 ## How can I use it?
 
