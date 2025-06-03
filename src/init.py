@@ -44,13 +44,13 @@ class db:
         Initialize the database
         Fill the database
         '''
-        all=set(get.game.all_ids())
-        result=[]
-        db.make_all()
-        for game_id in all:
-            result=get.game.game_data(game_id)
-            db.fill_all(result)
-            logging.info(f'Game {game_id} done')
+        #all=set(get.game.all_ids())
+        #result=[]
+        #db.make_all()
+        #for game_id in all:
+        #    result=get.game.game_data(game_id)
+        #    db.fill_all(result)
+        #    logging.info(f'Game {game_id} done')
         table.update.players()
         #table.update.teams()
         return None 
