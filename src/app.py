@@ -60,7 +60,7 @@ def serve_shotcard_image(filename):
     return send_from_directory(SHOTCARD_DIR, filename, mimetype='image/jpeg')  # or appropriate type
 
 @app.route('/api/season', methods=['GET','POST'])
-@cross_origin(origins=["http://localhost:3000"])
+@cross_origin()
 def get_data():
     '''
     Reading out the data from the seaosn page
@@ -71,6 +71,7 @@ def get_data():
     return send_file(img, mimetype='image/png')
 
 @app.route('/api/season/result')
+@cross_origin()
 def serve_card():
     return send_from_directory('../public/static/cards/','result.png')
 
