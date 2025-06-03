@@ -106,7 +106,7 @@ class main:
         Main initlize function
         init database, logos,headshots and shotcards
         '''
-        db.init()
+        #db.init()
         img.logos()
         img.headshots()
         shotcard.plot.init()
