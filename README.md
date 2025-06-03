@@ -5,7 +5,9 @@ The code is using a react frontend with a flask based backend.
 
 Please,keep in mind that this project is not done but I'd it to be somewhere for my cv.
 
-This porject will be updated soon.
+You can see it here https://react-shotbot.onrender.com/
+
+With no functional backend as of right now, because I am still annoyed by onrender.com
 
 ## How do set it up?
 
