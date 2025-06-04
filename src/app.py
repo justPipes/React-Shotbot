@@ -27,7 +27,7 @@ SHOTCARD_DIR = os.path.join(BASE_DIR, 'assets', 'shotcard/')
 
 
 @app.route('/api/shotcard', methods=['GET'])
-@cross_origin(origin="http://localhost:3000")
+@cross_origin()
 def get_shotcard():
     '''
     Returns the shotcard corresponding to the user choice
@@ -49,7 +49,7 @@ def get_shotcard():
         return jsonify({'error': str(e)}), 500
 
 @app.route('/api/shotcard/<filename>')
-@cross_origin(origin="http://localhost:3000")
+@cross_origin()
 def serve_shotcard_image(filename):
     '''
     Serving the shotcard for the choosen team
@@ -62,7 +62,7 @@ def serve_shotcard_image(filename):
     return send_from_directory(SHOTCARD_DIR, filename, mimetype='image/jpeg')  # or appropriate type
 
 @app.route('/api/season', methods=['GET','POST'])
-@cross_origin(origin="http://localhost:3000")
+@cross_origin()
 def get_data():
     '''
     Reading out the data from the seaosn page
@@ -73,7 +73,7 @@ def get_data():
     return send_file(img, mimetype='image/png')
 
 @app.route('/api/season/result')
-@cross_origin(origin="http://localhost:3000")
+@cross_origin()
 def serve_card():
     return send_from_directory('../public/static/cards/','result.png')
 
