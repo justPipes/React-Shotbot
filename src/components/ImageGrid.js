@@ -8,7 +8,7 @@ const ImageGrid = ({ images }) => {
       {images.map((imgPath, index) => (
         <img
           key={index}
-          src={`http://localhost:5000${imgPath}`} 
+          src={`${process.env.REACT_APP_API_URL}${imgPath}`} 
           alt={`img-${index}`}
         />
       ))}

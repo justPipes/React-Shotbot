@@ -40,7 +40,7 @@ const sendTogglesToBackend = async () => {
   const activeEvents = eventLabels.filter((_, index) => eventToggles[index]);
 
   try {
-    const response = await fetch('http://localhost:5000/api/season', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/season`, {
       method: 'POST',
       headers: {
         'Access-Control-Allow-Origin': '*',

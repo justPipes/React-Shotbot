@@ -86,7 +86,7 @@ function ShotCardTeamDropdown({ onTeamSelect }) {
     try {
       console.log('Fetching data for team:', teamId);
 
-      const response = await fetch(`http://localhost:5000/api/shotcard?team_id=${teamId}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/season"/api/shotcard?team_id=${teamId}`, {
         method: 'GET',
         headers: {
           'Accept': 'application/json',
