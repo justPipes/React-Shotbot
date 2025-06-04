@@ -9,6 +9,8 @@ This project will be updated soon.
 
 If you want a peek at the webapp, take a look at https://react-shotbot.onrender.com.
 
+Please keep in mind, that I use the free tier of the host, the application spins down after inactivity so keep the tab active.
+
 If you want to do a small test, take a look at the deployment-test branch with a filled database.
 
 
