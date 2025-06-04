@@ -36,6 +36,7 @@ function SeasonToggleButtons() {
       });
     };
 const sendTogglesToBackend = async () => {
+  console.log(process.env.REACT_APP_API_URL);
   const activeTeams = Object.keys(teamToggles).filter(id => teamToggles[id]);
   const activeEvents = eventLabels.filter((_, index) => eventToggles[index]);
 
