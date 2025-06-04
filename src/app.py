@@ -13,7 +13,7 @@ import time
 app = Flask(__name__)
 CORS(app, resources={
     r"/api/*": {
-        "origins": "*",
+        "origins": "https://react-shotbot.onrender.com",
         "methods": ["GET", "POST", "OPTIONS", "PUT", "DELETE"],  # Alle benötigten Methoden
         "allow_headers": ["Content-Type", "Authorization"],      # Alle benötigten Headers
         "supports_credentials": True                             # Falls Cookies/JWT

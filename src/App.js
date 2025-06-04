@@ -26,6 +26,7 @@ function App() {
           <Route path='/shotcard' element={<Shotcards />} />
           </Routes>
         </Router>
+        
       </div>
       <div className="outer"></div>
     </div>

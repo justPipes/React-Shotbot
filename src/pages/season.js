@@ -10,6 +10,7 @@ function Season() {
         <p>Separted into offensive,neutral and defensive zone from the point-of-view for the acting team.</p>
         <SeasonToggleButtons/>
         
+      
     </div>
   );
 }
