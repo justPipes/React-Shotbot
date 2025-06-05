@@ -90,6 +90,10 @@ def handle_exception(e):
     '''
     return jsonify({"error_1": str(e)})
 
+@app.route('/api/test')
+def test():
+    return jsonify({'status': 'success'})
+
 @app.errorhandler(404)
 def not_found(e):
     return send_from_directory('../build/static', "index.html")
