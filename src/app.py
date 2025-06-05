@@ -99,7 +99,13 @@ def not_found(e):
     return send_from_directory('../build/static', "index.html")
 
 if __name__ == '__main__':
-    port = int(os.environ.get('PORT', 5000))  # Keep 5000 for local
-    if 'RENDER' in os.environ:  # Render-specific detection
-        port = int(os.environ['PORT'])  # Will crash if missing
-    app.run(host='0.0.0.0', port=port, debug=('RENDER' not in os.environ), threaded=True)
+    try:
+        port = int(os.environ.get('PORT', 5000))  # Keep 5000 for local
+        if 'RENDER' in os.environ:  # Render-specific detection
+            port = int(os.environ['PORT'])  # Will crash if missing
+        else:
+             port = int(os.environ.get('PORT', 5000)) 
+        app.run(host='0.0.0.0', port=port, debug=('RENDER' not in os.environ), threaded=True)
+    except Exception as e:
+        print(f"!!! FAILED TO START: {str(e)} !!!")
+        raise  # This will show the full traceback in Render logs
