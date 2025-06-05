@@ -81,7 +81,7 @@ def get_data():
 @app.route('/api/season/result')
 @cross_origin()
 def serve_card():
-    return send_from_directory('../public/static/cards/','result.png')
+    return send_from_directory('../build/static/cards/','result.png')
 
 @app.errorhandler(Exception)
 def handle_exception(e):
@@ -89,8 +89,11 @@ def handle_exception(e):
     General error handler
     '''
     return jsonify({"error": str(e)})
-    ''''
-    '''
+
+@app.errorhandler(404)
+def not_found(e):
+    return send_from_directory(app.static_folder, "index.html")
+
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0',debug=True, port=port,threaded=True)
