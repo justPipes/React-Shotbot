@@ -88,11 +88,11 @@ def handle_exception(e):
     '''
     General error handler
     '''
-    return jsonify({"error": str(e)})
+    return jsonify({"error_1": str(e)})
 
 @app.errorhandler(404)
 def not_found(e):
-    return send_from_directory(app.static_folder, "index.html")
+    return send_from_directory('../build/static', "index.html")
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
