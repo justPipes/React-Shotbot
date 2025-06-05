@@ -24,7 +24,13 @@ BASE_DIR = os.path.dirname(__file__)
 CARDS_DIR = os.path.join(BASE_DIR, 'src', 'assets', 'card')
 SHOTCARD_DIR = os.path.join(BASE_DIR, 'assets', 'shotcard/')
 
+@app.route('/')
+def index():
+    return send_from_directory('../build/','index.html')
 
+@app.route('/static/<path:path>')
+def serve_static(path):
+    return send_from_directory('../build/static', path)
 
 @app.route('/api/shotcard', methods=['GET'])
 @cross_origin()
