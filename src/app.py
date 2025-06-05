@@ -9,6 +9,8 @@ from flask import url_for
 import logging
 import map
 import time
+import matplotlib
+matplotlib.use('Agg') 
 
 app = Flask(__name__)
 CORS(app, resources={
